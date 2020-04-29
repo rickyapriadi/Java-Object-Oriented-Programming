@@ -1,5 +1,6 @@
 package com.java.oop;
 
+// example 1
 class Mahasiswa {
     String name;
     int NIM;
@@ -58,6 +59,30 @@ class Chain {
     }
 }
 
+// example 3
+class E {
+    int age;
+
+    public E() {
+        this.age = 10;
+    }
+
+    public E(int e) {
+        this();
+        this.age += e;
+    }
+
+    public E(int e, int f) {
+        this(e);
+        this.age += (e * f);
+    }
+
+    public E(int e, int f, int g) {
+        this(e,f);
+        this.age += (e + f + g);
+    }
+}
+
 public class ConstructorChaining {
     public static void main(String[] args) {
 
@@ -69,8 +94,22 @@ public class ConstructorChaining {
 
         // example 2
         new Chain("ricky", 20);
-        new Chain(400);
+        new Chain(40);
         new Chain();
 
+        // example 3
+        E e;
+
+        e = new E();
+        System.out.println("default constructor     : " + e.age); // 10
+
+        e = new E(3);
+        System.out.println("constructor 1 parameter : " + e.age); // 13
+
+        e = new E(4,4);
+        System.out.println("constructor 2 parameter : " + e.age); // 30
+
+        e = new E(5,5, 5);
+        System.out.println("constructor 3 parameter : " + e.age); // 55
     }
 }
